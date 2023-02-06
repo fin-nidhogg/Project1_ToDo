@@ -76,11 +76,16 @@ header button:hover {
 }
 
 .tasks-list button {
+    color: rgb(148, 6, 6);
+    font-size: 1.2rem;
     border-radius: var(--global-border-radius);
     border: transparent;
     background-color: transparent;
 }
-
+.tasks-list button:hover {
+    color: rgb(255, 4, 4);
+    transition: var(--global-transition);
+}
 .taks-list {
     color: #D55672;
 }

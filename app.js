@@ -48,8 +48,7 @@ Render new li -item from object
 
 todolist[0].addEventListener("click", (event) => {
   if (event.target.classList.contains('delete') || 
-  event.target.parentElement.classList.contains('delete') ||
-  event.target.parentClass.parentClass.classList.contains('delete')) {
+  event.target.parentElement.classList.contains('delete')) {
     const todoId = event.target.closest("li").id;
 
     deleteTodo(todoId);
@@ -68,20 +67,7 @@ function createTodo(todo) {
         <span contenteditable="true">${todo.name}</span>
     </div>
     <button title="Delete the "${todo.name}" task" class="delete">
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem"
-        viewBox="0 0 1280.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
-        <metadata>
-        Created by potrace 1.15, written by Peter Selinger 2001-2017
-        </metadata>
-        <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="#FF0000"
-        stroke="none">
-        <path d="M3137 9659 l-537 -539 1360 -1360 1360 -1360 -1360 -1360 -1360
-        -1360 540 -540 540 -540 1360 1360 1360 1360 1360 -1360 1360 -1360 540 540
-        540 540 -1360 1360 -1360 1360 1360 1360 1360 1360 -540 540 -540 540 -1360
-        -1360 -1360 -1360 -1360 1360 c-748 748 -1361 1360 -1362 1359 -2 0 -245 -243
-        -541 -540z" />
-        </g>
-        </svg>  
+    <i class="fa-sharp fa-solid fa-trash"></i>  
     </button>
     `;
   todoElement.innerHTML = taskHtml;
