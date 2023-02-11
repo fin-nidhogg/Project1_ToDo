@@ -75,12 +75,18 @@ header button:hover {
     padding: 1.25rem;
 }
 
+.tasks-list li.done {
+    background-color: #dcdcd3;
+    color: #848484;
+    text-decoration: line-through;
+}
+
 .tasks-list button {
-    color: rgb(148, 6, 6);
-    font-size: 1.2rem;
+    background-color: transparent;
     border-radius: var(--global-border-radius);
     border: transparent;
-    background-color: transparent;
+    color: rgb(148, 6, 6);
+    font-size: 1.2rem;
 }
 .tasks-list button:hover {
     color: rgb(255, 4, 4);
@@ -104,5 +110,5 @@ header button:hover {
 
 .error {
     border: 1px solid red;
-    background-color: #f8cdd6;
+    background-color: #d49ba7;
 }
