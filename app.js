@@ -3,6 +3,9 @@ const taskForm = document.getElementById("task-form");
 const todolist = document.getElementsByClassName("tasks-list");
 const taskInput = document.getElementById("task-input");
 const errorMessage = "What's the point of empty task?";
+const countActive = document.getElementById("active");
+const countCompleted = document.getElementById("complete");
+const countAll = document.getElementById("total");
 
 // Main Array witch contains all tasks
 let tasks = JSON.parse(localStorage.getItem("todos")) || [];
@@ -19,7 +22,6 @@ if (localStorage.getItem("todos")) {
     createTodo(task);
   });
 }
-
 /*
 Listen if submit button is pressed. Default reload for submit is prevented.
 Catch form data, create object from it and save object into localstorage.
@@ -64,6 +66,8 @@ todolist[0].addEventListener("click", (event) => {
     deleteTodo(todoId);
   }
 });
+
+countTasks();
 
 // Event listener for triggering edit function for specified todoID
 todolist[0].addEventListener("input", (event) => {
@@ -123,9 +127,7 @@ function createTodo(todo) {
 //////////////////////////////////
 
 function deleteTodo(todoId) {
-  tasks = tasks.filter((todo) => {
-    tasks.id != parseInt(todoId);
-  });
+  tasks = tasks.filter((todo) => todo.id != parseInt(todoId));
 
   localStorage.setItem("todos", JSON.stringify(tasks));
   document.getElementById(todoId).remove();
@@ -164,6 +166,22 @@ function updateTodo(todoId, todoElement) {
     }
   }
   localStorage.setItem("todos", JSON.stringify(tasks));
+  countTasks();
+}
+
+//////////////////////////////////
+// Count tasks
+//////////////////////////////////
+
+function countTasks() {
+  const completedArray = tasks.filter((task) => task.done == true);
+  console.log(completedArray);
+  const complete = completedArray.length;
+  const alltasks = tasks.length;
+  const active = alltasks - complete;
+  countCompleted.innerHTML = "Completed: " + complete;
+  countAll.innerHTML = "Tasks in total: " + tasks.length;
+  countActive.innerHTML = "Active: " + active;
 }
 
 /* 
