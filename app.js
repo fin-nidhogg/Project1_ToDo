@@ -183,7 +183,7 @@ function countTasks() {
   const alltasks = tasks.length;
 
   countCompleted.innerHTML = "Completed: " + complete;
-  countAll.innerHTML = "Total: " + tasks.length;
+  countAll.innerHTML = "All: " + tasks.length;
   countActive.innerHTML = "Active: " + (alltasks - complete);
 }
 
