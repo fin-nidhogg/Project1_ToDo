@@ -22,14 +22,14 @@ header {
     display: flexbox;
     background-color: #282835;
     color: #ffc400;
-    padding: 3rem;
+    padding: 1.8rem;
     text-align: center;
     width: 100%;
 }
 
 header h1 {
     font-size: 2.8rem;
-    margin-bottom: 2rem;
+    margin: 1.5rem 0rem;
 }
 
 header input[type=text] {
@@ -51,10 +51,6 @@ header button {
 header button:hover {
     background-color: #66c915;
     transition: var(--global-transition)
-}
-
-#counters {
-    padding: 1.5rem;
 }
 
 #task-listing {
@@ -100,7 +96,7 @@ header button:hover {
 .tasks-list li div {
     align-items: center;
     display: flex;
-    gap: .8rem;
+    gap: .6rem;
 }
 
 [contenteditable]:focus {
@@ -114,15 +110,29 @@ header button:hover {
     background-color: #d49ba7;
 }
 
+#counters {
+    padding: 0.3rem;
+}
+
 #counters span {
     font-weight: bold;
     display: inline-block;
-    margin: 0rem 1em;
+    margin: 0rem 0.5em;
 }
 
 /* Mobile styles */
 
 @media only screen and (max-width: 600px) {
+
+    header {
+        padding: 0.1rem 0rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
     header input[type=text] {
         min-width: 100%;
     }
@@ -132,7 +142,12 @@ header button:hover {
         min-width: 95%;
     }
 
-    header button {
-        min-width: 95%;
+    #task-form {
+        padding: 5px;
+    }
+
+    #submit {
+        min-width: 99%;
+        margin: 10px 0px;
     }
   }
