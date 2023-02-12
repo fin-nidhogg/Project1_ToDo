@@ -179,6 +179,7 @@ function countTasks() {
   const complete = completedArray.length;
   const alltasks = tasks.length;
   const active = alltasks - complete;
+  
   countCompleted.innerHTML = "Completed: " + complete;
   countAll.innerHTML = "Tasks in total: " + tasks.length;
   countActive.innerHTML = "Active: " + active;
