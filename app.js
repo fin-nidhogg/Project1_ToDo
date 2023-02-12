@@ -3,6 +3,8 @@ const taskForm = document.getElementById("task-form");
 const todolist = document.getElementsByClassName("tasks-list");
 const taskInput = document.getElementById("task-input");
 const errorMessage = "What's the point of empty task?";
+
+// Counter elements
 const countActive = document.getElementById("active");
 const countCompleted = document.getElementById("complete");
 const countAll = document.getElementById("total");
@@ -20,6 +22,7 @@ let tasks = JSON.parse(localStorage.getItem("todos")) || [];
 if (localStorage.getItem("todos")) {
   tasks.map((task) => {
     createTodo(task);
+    countTasks();
   });
 }
 /*
@@ -47,6 +50,7 @@ taskForm.addEventListener("submit", (e) => {
   tasks.push(todo);
   localStorage.setItem("todos", JSON.stringify(tasks));
   createTodo(todo);
+  countTasks();
 
   // Reset form and remove error message if present
   taskInput.classList.remove("error");
@@ -66,8 +70,6 @@ todolist[0].addEventListener("click", (event) => {
     deleteTodo(todoId);
   }
 });
-
-countTasks();
 
 // Event listener for triggering edit function for specified todoID
 todolist[0].addEventListener("input", (event) => {
@@ -131,6 +133,7 @@ function deleteTodo(todoId) {
 
   localStorage.setItem("todos", JSON.stringify(tasks));
   document.getElementById(todoId).remove();
+  countTasks();
 }
 
 //////////////////////////////////
@@ -175,14 +178,12 @@ function updateTodo(todoId, todoElement) {
 
 function countTasks() {
   const completedArray = tasks.filter((task) => task.done == true);
-  console.log(completedArray);
   const complete = completedArray.length;
   const alltasks = tasks.length;
-  const active = alltasks - complete;
   
   countCompleted.innerHTML = "Completed: " + complete;
-  countAll.innerHTML = "Tasks in total: " + tasks.length;
-  countActive.innerHTML = "Active: " + active;
+  countAll.innerHTML = "Total: " + tasks.length;
+  countActive.innerHTML = "Active: " + (alltasks - complete);
 }
 
 /* 
