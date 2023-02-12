@@ -115,9 +115,10 @@ header button:hover {
 }
 
 #counters span {
+    color: white;
     font-weight: bold;
     display: inline-block;
-    margin: 0rem 0.5em;
+    margin: 0rem 1em;
 }
 
 /* Mobile styles */
