@@ -184,7 +184,7 @@ function countTasks() {
 
   countCompleted.innerHTML = "Completed: " + complete;
   countAll.innerHTML = "All: " + tasks.length;
-  countActive.innerHTML = "Active: " + (alltasks - complete);
+  countActive.innerHTML = "Pending: " + (alltasks - complete);
 }
 
 /* 
