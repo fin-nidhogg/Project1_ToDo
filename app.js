@@ -18,13 +18,15 @@ let tasks = JSON.parse(localStorage.getItem("todos")) || [];
 ///////////////////////////////
 */
 
+countTasks(); // Check initial stats for tasks 
+
 // Read and render all elements from local storage
 if (localStorage.getItem("todos")) {
   tasks.map((task) => {
     createTodo(task);
-    countTasks();
   });
 }
+
 /*
 Listen if submit button is pressed. Default reload for submit is prevented.
 Catch form data, create object from it and save object into localstorage.
@@ -74,7 +76,6 @@ todolist[0].addEventListener("click", (event) => {
 // Event listener for triggering edit function for specified todoID
 todolist[0].addEventListener("input", (event) => {
   const todoId = event.target.closest("li").id;
-
   updateTodo(todoId, event.target);
 });
 
@@ -180,7 +181,7 @@ function countTasks() {
   const completedArray = tasks.filter((task) => task.done == true);
   const complete = completedArray.length;
   const alltasks = tasks.length;
-  
+
   countCompleted.innerHTML = "Completed: " + complete;
   countAll.innerHTML = "Total: " + tasks.length;
   countActive.innerHTML = "Active: " + (alltasks - complete);
