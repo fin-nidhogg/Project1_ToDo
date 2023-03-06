@@ -103,7 +103,7 @@ header button:hover {
 
 [contenteditable]:focus {
     transition: var(--global-transition);
-    background-color: #f2fdd1;
+    color: #3f7017;
     outline: transparent;
 }
 
