@@ -152,7 +152,6 @@ function updateTodo(todoId, todoElement) {
       parent.classList.remove("error");
     } else {
       todo.name = errorMessage;
-      todoElement.textContent = errorMessage;
       parent.classList.add("error");
     }
   } else {

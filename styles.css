@@ -89,9 +89,7 @@ header button:hover {
     color: rgb(255, 4, 4);
     transition: var(--global-transition);
 }
-.taks-list {
-    color: #D55672;
-}
+
 
 .tasks-list li div {
     align-items: center;
@@ -99,10 +97,19 @@ header button:hover {
     gap: .6rem;
 }
 
+.tasks-list span {
+    user-select: all;
+}
+
 [contenteditable]:focus {
     transition: var(--global-transition);
     background-color: #f2fdd1;
     outline: transparent;
+}
+
+span[contenteditable]:empty:focus::before,
+span[contenteditable]:empty::before{
+content: 'What\'s the point of empty task?';
 }
 
 .error {
