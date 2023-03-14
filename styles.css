@@ -14,10 +14,6 @@ body {
     background-color: rgb(233, 225, 220);
 }
 
-#container {
-    text-align: center;
-}
-
 header {
     display: flexbox;
     background-color: #282835;
@@ -57,6 +53,22 @@ header button:hover {
     margin: auto;
     width: 40%;
     min-width: 550px;
+}
+
+#container {
+    text-align: center;
+}
+
+#counters {
+    padding: 0.3rem;
+}
+
+#counters span {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 5px;
+    margin: 0rem 1em;
 }
 
 .tasks-list {
@@ -117,17 +129,6 @@ content: 'What\'s the point of empty task?';
     background-color: #d49ba7;
 }
 
-#counters {
-    padding: 0.3rem;
-}
-
-#counters span {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    display: inline-block;
-    padding-left: 5px;
-    margin: 0rem 1em;
-}
 
 /* Mobile styles */
 
