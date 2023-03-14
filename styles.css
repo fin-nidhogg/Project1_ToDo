@@ -63,12 +63,38 @@ header button:hover {
     padding: 0.3rem;
 }
 
-#counters span {
+
+.filter-btn {
+    background-color: transparent;
     color: rgb(255, 255, 255);
+    font-size: 1.05em;
     font-weight: bold;
     display: inline-block;
     padding-left: 5px;
     margin: 0rem 1em;
+    text-shadow: none;
+}
+
+.filter-btn:hover {
+    background-color: transparent;
+    color: #ffc400;
+}
+
+.filter-btn:active {
+    background-color: transparent;
+    color: #ffc400;
+}
+
+
+
+
+.error {
+    border: 1px solid red;
+    background-color: #d49ba7;
+}
+
+.hidden {
+    display: none !important;
 }
 
 .tasks-list {
@@ -123,12 +149,6 @@ span[contenteditable]:empty:focus::before,
 span[contenteditable]:empty::before{
 content: 'What\'s the point of empty task?';
 }
-
-.error {
-    border: 1px solid red;
-    background-color: #d49ba7;
-}
-
 
 /* Mobile styles */
 

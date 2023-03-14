@@ -181,9 +181,9 @@ function countTasks() {
   const complete = completedArray.length;
   const alltasks = tasks.length;
 
-  countCompleted.innerHTML = "Completed: " + complete;
-  countAll.innerHTML = "All: " + tasks.length;
-  countActive.innerHTML = "Pending: " + (alltasks - complete);
+  countCompleted.innerHTML = "Completed:  " + complete;
+  countAll.innerHTML = "All:  " + tasks.length;
+  countActive.innerHTML = "Pending:  " + (alltasks - complete);
 }
 
 /* 
