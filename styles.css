@@ -1,183 +1,177 @@
 :root {
-    --global-border-radius: 0.40rem;
-    --global-transition: 0.2s ease-out;
+  --global-border-radius: 0.4rem;
+  --global-transition: 0.2s ease-out;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: rgb(233, 225, 220);
+  background-color: rgb(233, 225, 220);
 }
 
 header {
-    display: flexbox;
-    background-color: #282835;
-    color: #ffc400;
-    padding: 1.8rem;
-    text-align: center;
-    width: 100%;
+  display: flexbox;
+  background-color: #282835;
+  color: #ffc400;
+  padding: 1.8rem;
+  text-align: center;
+  width: 100%;
 }
 
 header h1 {
-    font-size: 2.8rem;
-    margin: 1.5rem 0rem;
+  font-size: 2.8rem;
+  margin: 1.5rem 0rem;
 }
 
-header input[type=text] {
-    border-radius: var(--global-border-radius);
-    outline-color: #ffc400;
-    padding: 1rem;
-    width: 40%;
-    min-width: 350px;
+header input[type="text"] {
+  border-radius: var(--global-border-radius);
+  outline-color: #ffc400;
+  padding: 1rem;
+  width: 40%;
+  min-width: 350px;
 }
 
 header button {
-    background-color: #ffc400;
-    border-radius: var(--global-border-radius);
-    border: none;
-    margin: 0.75rem;
-    padding: 1rem;
+  background-color: #ffc400;
+  border-radius: var(--global-border-radius);
+  border: none;
+  margin: 0.75rem;
+  padding: 1rem;
 }
 
 header button:hover {
-    background-color: #66c915;
-    transition: var(--global-transition)
+  background-color: #66c915;
+  transition: var(--global-transition);
 }
 
 #task-listing {
-    margin: auto;
-    width: 40%;
-    min-width: 550px;
+  margin: auto;
+  width: 40%;
+  min-width: 550px;
 }
 
 #container {
-    text-align: center;
+  text-align: center;
 }
 
 #counters {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }
 
-
 .filter-btn {
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    font-size: 1em;
-    font-weight: bold;
-    display: inline-block;
-    padding-left: 5px;
-    margin: 0rem 1em;
-    text-shadow: none;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+  padding-left: 5px;
+  margin: 0rem 1em;
+  text-shadow: none;
 }
 
 .filter-btn:hover {
-    background-color: transparent;
-    color: #ffc400;
+  background-color: transparent;
+  color: #ffc400;
 }
 
 .filter-btn:active {
-    background-color: transparent;
-    color: #ffc400;
+  background-color: transparent;
+  color: #ffc400;
 }
 
-
-
-
 .error {
-    border: 1px solid red;
-    background-color: #d49ba7;
+  border: 1px solid red;
+  background-color: #d49ba7;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 .tasks-list {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .tasks-list li {
-    background-color: white;
-    border-radius: var(--global-border-radius);
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-    padding: 1.25rem;
+  background-color: white;
+  border-radius: var(--global-border-radius);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
 }
 
 .tasks-list li.done {
-    background-color: #dcdcd3;
-    color: #848484;
-    text-decoration: line-through;
+  background-color: #dcdcd3;
+  color: #848484;
+  text-decoration: line-through;
 }
 
 .tasks-list button {
-    background-color: transparent;
-    border-radius: var(--global-border-radius);
-    border: transparent;
-    color: rgb(148, 6, 6);
-    font-size: 1.2rem;
+  background-color: transparent;
+  border-radius: var(--global-border-radius);
+  border: transparent;
+  color: rgb(148, 6, 6);
+  font-size: 1.2rem;
 }
 .tasks-list button:hover {
-    color: rgb(255, 4, 4);
-    transition: var(--global-transition);
+  color: rgb(255, 4, 4);
+  transition: var(--global-transition);
 }
 
-
 .tasks-list li div {
-    align-items: center;
-    display: flex;
-    gap: .6rem;
+  align-items: center;
+  display: flex;
+  gap: 0.6rem;
 }
 
 .tasks-list span {
-    user-select: all;
+  user-select: all;
 }
 
 [contenteditable]:focus {
-    transition: var(--global-transition);
-    color: #3f7017;
-    outline: transparent;
+  transition: var(--global-transition);
+  color: #3f7017;
+  outline: transparent;
 }
 
 span[contenteditable]:empty:focus::before,
-span[contenteditable]:empty::before{
-content: 'What\'s the point of empty task?';
+span[contenteditable]:empty::before {
+  content: "What's the point of empty task?";
 }
 
 /* Mobile styles */
 
 @media only screen and (max-width: 600px) {
-
-    header {
-        padding: 0.1rem 0rem 1rem;
-    }
-
-    header h1 {
-        font-size: 1.6rem;
-        text-transform: uppercase;
-    }
-
-    header input[type=text] {
-        min-width: 100%;
-    }
-
-    #task-listing {
-        margin: auto;
-        min-width: 95%;
-    }
-
-    #task-form {
-        padding: 5px;
-    }
-
-    #submit {
-        min-width: 99%;
-        margin: 10px 0px;
-    }
+  header {
+    padding: 0.1rem 0rem 1rem;
   }
+
+  header h1 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  header input[type="text"] {
+    min-width: 100%;
+  }
+
+  #task-listing {
+    margin: auto;
+    min-width: 95%;
+  }
+
+  #task-form {
+    padding: 5px;
+  }
+
+  #submit {
+    min-width: 99%;
+    margin: 10px 0px;
+  }
+}

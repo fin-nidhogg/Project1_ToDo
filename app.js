@@ -9,7 +9,7 @@ const countActive = document.getElementById("active");
 const countCompleted = document.getElementById("complete");
 const countAll = document.getElementById("total");
 
-// Main Array witch contains all tasks
+// Main Array containing all task objects.
 let tasks = JSON.parse(localStorage.getItem("todos")) || [];
 
 /* 
@@ -18,9 +18,12 @@ let tasks = JSON.parse(localStorage.getItem("todos")) || [];
 ///////////////////////////////
 */
 
-countTasks(); // Check initial stats for tasks 
+countTasks(); // Check initial numbers for each status counters.
 
-// Read and render all elements from local storage
+/* Check if local storage has item "todos". IF requested item exists, 
+iterate through each object in tasks array. 
+While iterating, each found object is used as an argument for function createTodo(). */
+
 if (localStorage.getItem("todos")) {
   tasks.map((task) => {
     createTodo(task);
@@ -29,12 +32,12 @@ if (localStorage.getItem("todos")) {
 
 /*
 Listen if submit button is pressed. Default reload for submit is prevented.
-Catch form data, create object from it and save object into localstorage.
+Catch form data, create object from it and save object into local storage.
 */
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Get input from form. If empty, raise error into form
+  // Get input from form. If empty, raise visual error in to form.
   const taskValue = taskInput.value;
   if (taskValue == "") {
     taskInput.classList.add("error");
@@ -43,7 +46,7 @@ taskForm.addEventListener("submit", (e) => {
   }
   // Create object from form data
   const todo = {
-    id: new Date().getTime(),
+    id: new Date().getTime(), // <- This is for getting easily unique id for each todo item. Basically get seconds since January 1, 1970.
     name: taskInput.value,
     done: false,
   };
@@ -79,7 +82,7 @@ todolist[0].addEventListener("input", (event) => {
   updateTodo(todoId, event.target);
 });
 
-// Remove focus from any element if [Enter] is pressed
+// Remove focus from any element if key [Enter] is pressed
 todolist[0].addEventListener("keydown", (event) => {
   if (event.keyCode == 13) {
     event.preventDefault();
@@ -93,9 +96,9 @@ todolist[0].addEventListener("keydown", (event) => {
 ///////////////////////////////
 */
 
-//////////////////////////////////
+///////////////////////////////////////
 // Function to CREATE new Todo Element
-//////////////////////////////////
+//////////////////////////////////////
 
 function createTodo(todo) {
   const todoElement = document.createElement("li");
@@ -118,9 +121,10 @@ function createTodo(todo) {
         <span ${!todo.done ? "contenteditable" : ""}>${todo.name}</span>
     </div>
     <button title="Delete the "${todo.name}" task" class="delete">
-    <i class="fa-sharp fa-solid fa-trash"></i>  
+      <i class="fa-sharp fa-solid fa-trash"></i>  
     </button>
     `;
+
   todoElement.innerHTML = taskHtml;
   todolist[0].appendChild(todoElement);
 }
