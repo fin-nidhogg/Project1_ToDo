@@ -1,5 +1,6 @@
 // Global variables
 const taskForm = document.getElementById("task-form");
+const buttons = document.getElementById("counters");
 const todolist = document.getElementsByClassName("tasks-list");
 const taskInput = document.getElementById("task-input");
 const errorMessage = "What's the point of empty task?";
@@ -11,7 +12,7 @@ const countAll = document.getElementById("total");
 
 // Main Array containing all task objects.
 let tasks = JSON.parse(localStorage.getItem("todos")) || [];
-let filterBy = "all";
+let filterBy = "total";
 
 /* 
 ///////////////////////////////
@@ -67,6 +68,12 @@ taskForm.addEventListener("submit", (e) => {
   taskInput.placeholder = "Add something awesome...";
   taskForm.reset();
   taskForm.focus();
+});
+
+// Event listener for filterbuttons
+buttons.addEventListener("click", (event) => {
+  filterBy = event.target.id;
+  filterByStatus();
 });
 
 // Event listener for triggering delete function for specified todoID
@@ -197,6 +204,14 @@ function countTasks() {
 }
 
 //////////////////////////////////
+// Set Filtering variable
+//////////////////////////////////
+
+function setFilter() {
+
+}
+
+//////////////////////////////////
 // Show and hide specified todos
 //////////////////////////////////
 
@@ -210,11 +225,11 @@ function filterByStatus() {
     if (item.classList.contains("done") && filterBy === "complete") {
       item.classList.remove("hidden");
       console.log("We are done!");
-    } else if (!item.classList.contains("done") && filterBy === "pending") {
+    } else if (!item.classList.contains("done") && filterBy === "active") {
       item.classList.remove("hidden");
       console.log("We are pending");
     } else {
-      if (filterBy === "all") {
+      if (filterBy === "total") {
         item.classList.remove("hidden");
       }
     }
