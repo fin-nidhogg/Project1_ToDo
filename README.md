@@ -2,6 +2,7 @@
 Web-sovellusten kehittäminen Javascriptillä TO00BL10-3018
 
 [>> Netlifyssä julkaistu demo löytyy täältä <<](https://apk-todo.netlify.app/)
+[>> Nopea ja hyvin karkea esittely <<](https://video.laurea.fi/media/JS_Projekti/0_x0mw4w9f)
 
 ## Referenssit.
 [MDN Web docs - JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)  
