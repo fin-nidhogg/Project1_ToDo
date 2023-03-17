@@ -1,4 +1,6 @@
 # Javascript Todo lista local storagea hyödyntäen.
+Web-sovellusten kehittäminen Javascriptillä TO00BL10-3018
+
 [>> Netlifyssä julkaistu demo löytyy täältä <<](https://apk-todo.netlify.app/)
 
 ## Referenssit.
