@@ -72,7 +72,10 @@ taskForm.addEventListener("submit", (e) => {
 
 // Event listener for filterbuttons
 buttons.addEventListener("click", (event) => {
-  filterBy = event.target.id;
+  const pushedBtn = event.target.id;
+  if (pushedBtn === "total" || "active" || "complete") {
+    filterBy = pushedBtn;
+  }
   filterByStatus();
 });
 
@@ -207,9 +210,7 @@ function countTasks() {
 // Set Filtering variable
 //////////////////////////////////
 
-function setFilter() {
-
-}
+function setFilter() {}
 
 //////////////////////////////////
 // Show and hide specified todos
@@ -221,7 +222,6 @@ function filterByStatus() {
   console.log(liItems);
   liItems.forEach((item) => {
     item.classList.add("hidden");
-
     if (item.classList.contains("done") && filterBy === "complete") {
       item.classList.remove("hidden");
       console.log("We are done!");

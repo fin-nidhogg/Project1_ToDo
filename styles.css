@@ -35,15 +35,15 @@ header input[type="text"] {
   min-width: 350px;
 }
 
-header button {
+#submit {
   background-color: #ffc400;
   border-radius: var(--global-border-radius);
   border: none;
-  margin: 0.75rem;
+  margin: 0.45rem;
   padding: 1rem;
 }
 
-header button:hover {
+#submit:hover {
   background-color: #66c915;
   transition: var(--global-transition);
 }
@@ -59,28 +59,36 @@ header button:hover {
 }
 
 #counters {
-  padding: 0.3rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .filter-btn {
   background-color: transparent;
-  color: rgb(255, 255, 255);
-  font-size: 1rem;
+  border: 0.5px solid rgb(59, 59, 59);
+  border-radius: var(--global-border-radius);
+  color: rgb(219, 219, 203);
+  font-size: 0.85vw;
   font-weight: bold;
-  display: inline-block;
-  padding: 0px;
-  margin: 2rem 1.5rem;
   text-shadow: none;
+  padding: 9px;
+  margin-top: 10px;
+  width: 15%;
 }
 
 .filter-btn:hover {
   background-color: transparent;
+  border: 0.5px solid #ffc400;
   color: #ffc400;
+  transition: var(--global-transition);
 }
 
-.filter-btn:active {
+.filter-btn:focus {
   background-color: transparent;
   color: #ffc400;
+  border: 1px solid #ffc400;
 }
 
 .error {
@@ -158,6 +166,26 @@ span[contenteditable]:empty::before {
 
   header input[type="text"] {
     min-width: 100%;
+  }
+
+  #counters {
+    margin-top: 10px;
+    display: flexbox;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+  }
+  
+  .filter-btn {
+    background-color: transparent;
+    border: 0.5px solid rgb(59, 59, 59);
+    border-radius: var(--global-border-radius);
+    color: rgb(219, 219, 203);
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: none;
+    padding: 5px;
+    width: 100%;
   }
 
   #task-listing {
