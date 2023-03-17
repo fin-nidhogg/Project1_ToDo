@@ -12,6 +12,8 @@ const countAll = document.getElementById("total");
 
 // Main Array containing all task objects.
 let tasks = JSON.parse(localStorage.getItem("todos")) || [];
+
+// Argument for tasks filtering
 let filterBy = "total";
 
 /* 
@@ -199,7 +201,7 @@ function updateTodo(todoId, todoElement) {
 function countTasks() {
   const completedArray = tasks.filter((task) => task.done == true);
   const complete = completedArray.length;
-  const alltasks = tasks.length;
+  const asalltks = tasks.length;
 
   countCompleted.innerHTML = "Completed:  " + complete;
   countAll.innerHTML = "All:  " + tasks.length;
