@@ -201,7 +201,7 @@ function updateTodo(todoId, todoElement) {
 function countTasks() {
   const completedArray = tasks.filter((task) => task.done == true);
   const complete = completedArray.length;
-  const asalltks = tasks.length;
+  const alltasks = tasks.length;
 
   countCompleted.innerHTML = "Completed:  " + complete;
   countAll.innerHTML = "All:  " + tasks.length;
