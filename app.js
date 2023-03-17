@@ -11,6 +11,11 @@ const countAll = document.getElementById("total");
 
 // Main Array containing all task objects.
 let tasks = JSON.parse(localStorage.getItem("todos")) || [];
+let completeTasks = tasks.filter((todo) => todo.done == true);
+let pendingTasks = tasks.filter((todo) => todo.done == false);
+
+console.log(completeTasks);
+console.log(pendingTasks);
 
 /* 
 ///////////////////////////////
