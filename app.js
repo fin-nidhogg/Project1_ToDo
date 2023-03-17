@@ -32,7 +32,7 @@ if (localStorage.getItem("todos")) {
   });
 }
 
-// Initial filtering by status
+// Initial task filtering by status
 filterByStatus();
 
 /*
@@ -219,16 +219,22 @@ function setFilter() {}
 function filterByStatus() {
   // Get all nodelist consisting all li elements
   const liItems = document.querySelectorAll("li");
-  console.log(liItems);
   liItems.forEach((item) => {
     item.classList.add("hidden");
+
+    // "Check if Complete -filter is selected by user"
+    
     if (item.classList.contains("done") && filterBy === "complete") {
       item.classList.remove("hidden");
-      console.log("We are done!");
-    } else if (!item.classList.contains("done") && filterBy === "active") {
+      console.log("We are done!"); // Just for debugging
+    } 
+    // "Complete" -filter wasn't selected so let's check if active is selected.
+    else if (!item.classList.contains("done") && filterBy === "active") {
       item.classList.remove("hidden");
-      console.log("We are pending");
-    } else {
+      console.log("We are pending"); // Just for debugging
+    } 
+    // Show all list elements.
+    else {
       if (filterBy === "total") {
         item.classList.remove("hidden");
       }
