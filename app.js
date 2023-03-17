@@ -11,11 +11,7 @@ const countAll = document.getElementById("total");
 
 // Main Array containing all task objects.
 let tasks = JSON.parse(localStorage.getItem("todos")) || [];
-let completeTasks = tasks.filter((todo) => todo.done == true);
-let pendingTasks = tasks.filter((todo) => todo.done == false);
-
-console.log(completeTasks);
-console.log(pendingTasks);
+let filterBy = "all";
 
 /* 
 ///////////////////////////////
@@ -34,6 +30,9 @@ if (localStorage.getItem("todos")) {
     createTodo(task);
   });
 }
+
+// Initial filtering by status
+filterByStatus();
 
 /*
 Listen if submit button is pressed. Default reload for submit is prevented.
@@ -61,6 +60,7 @@ taskForm.addEventListener("submit", (e) => {
   localStorage.setItem("todos", JSON.stringify(tasks));
   createTodo(todo);
   countTasks();
+  filterByStatus();
 
   // Reset form and remove error message if present
   taskInput.classList.remove("error");
@@ -85,6 +85,7 @@ todolist[0].addEventListener("click", (event) => {
 todolist[0].addEventListener("input", (event) => {
   const todoId = event.target.closest("li").id;
   updateTodo(todoId, event.target);
+  filterByStatus();
 });
 
 // Remove focus from any element if key [Enter] is pressed
@@ -193,6 +194,31 @@ function countTasks() {
   countCompleted.innerHTML = "Completed:  " + complete;
   countAll.innerHTML = "All:  " + tasks.length;
   countActive.innerHTML = "Pending:  " + (alltasks - complete);
+}
+
+//////////////////////////////////
+// Show and hide specified todos
+//////////////////////////////////
+
+function filterByStatus() {
+  // Get all nodelist consisting all li elements
+  const liItems = document.querySelectorAll("li");
+  console.log(liItems);
+  liItems.forEach((item) => {
+    item.classList.add("hidden");
+
+    if (item.classList.contains("done") && filterBy === "complete") {
+      item.classList.remove("hidden");
+      console.log("We are done!");
+    } else if (!item.classList.contains("done") && filterBy === "pending") {
+      item.classList.remove("hidden");
+      console.log("We are pending");
+    } else {
+      if (filterBy === "all") {
+        item.classList.remove("hidden");
+      }
+    }
+  });
 }
 
 /* 

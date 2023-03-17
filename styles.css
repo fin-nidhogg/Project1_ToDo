@@ -15,7 +15,6 @@ body {
 }
 
 header {
-  display: flexbox;
   background-color: #282835;
   color: #ffc400;
   padding: 1.8rem;
@@ -66,11 +65,11 @@ header button:hover {
 .filter-btn {
   background-color: transparent;
   color: rgb(255, 255, 255);
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
   display: inline-block;
-  padding-left: 5px;
-  margin: 0rem 1em;
+  padding: 0px;
+  margin: 2rem 1.5rem;
   text-shadow: none;
 }
 
