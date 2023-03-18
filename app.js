@@ -1,6 +1,6 @@
 // Global variables
 const taskForm = document.getElementById("task-form");
-const buttons = document.getElementById("counters");
+const countersDiv = document.getElementById("counters");
 const todolist = document.getElementsByClassName("tasks-list");
 const taskInput = document.getElementById("task-input");
 const errorMessage = "What's the point of empty task?";
@@ -73,12 +73,20 @@ taskForm.addEventListener("submit", (e) => {
 });
 
 // Event listener for filterbuttons
-buttons.addEventListener("click", (event) => {
+countersDiv.addEventListener("click", (event) => {
   const pushedBtn = event.target.id;
-  if (pushedBtn === "total" || "active" || "complete") {
+  
+  // Ensure clicked element is button rather than parent element
+  if (pushedBtn != "counters") {
     filterBy = pushedBtn;
+  } else {
+    filterBy = filterBy;
   }
+  console.log("Current filtering argument is: " + filterBy);
+
+  // Apply filter
   filterByStatus();
+
 });
 
 // Event listener for triggering delete function for specified todoID
@@ -208,11 +216,6 @@ function countTasks() {
   countActive.innerHTML = "Pending:  " + (alltasks - complete);
 }
 
-//////////////////////////////////
-// Set Filtering variable
-//////////////////////////////////
-
-function setFilter() {}
 
 //////////////////////////////////
 // Show and hide specified todos
